@@ -1,4 +1,4 @@
-﻿Console.Clear();
+Console.Clear();
 
 Player player1 = new();
 
@@ -107,8 +107,8 @@ class Player {
 
     public void GiveCard(Card card)
     {
-        Array.Resize(ref Cards, Cards.Length + 1); // Increase size by 1
-        Cards[^1] = card; // Add the new card to the last position
+        Array.Resize(ref Cards, Cards.Length + 1);
+        Cards[^1] = card;
     }
 
     public void Move(Card.Location startLocation, Card.Location newLocation, int amount)
