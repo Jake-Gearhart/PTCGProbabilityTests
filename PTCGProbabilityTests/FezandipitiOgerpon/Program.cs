@@ -31,6 +31,7 @@ for (int i = 0; i < iterations; i++)
         player1.Hand.Any(c => c.category == "thinner")
     ) {
         player1.Hand.First(c => c.category == "thinner").location = Card.Location.Discard;
+        // try thinning 1 for 2 (like with Poffin)
         if (player1.Deck.FirstOrDefault(c => c.category == "thinnable") is Card thinnableCard) thinnableCard.location = Card.Location.Discard;
         if (player1.Deck.FirstOrDefault(c => c.category == "thinnable") is Card thinnableCard2) thinnableCard2.location = Card.Location.Discard;
     }
