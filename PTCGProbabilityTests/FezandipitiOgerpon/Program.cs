@@ -13,8 +13,6 @@ player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "thinnable"));
 player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "thinner"));
 player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "thinnable"));
 
-// player1.FillDeckWithGenerics();
-
 int iterations = 10000000;
 int fez_first_successes = 0;
 int ogerpon_first_successes = 0;
@@ -111,14 +109,6 @@ class Player {
     {
         Array.Resize(ref Cards, Cards.Length + 1); // Increase size by 1
         Cards[^1] = card; // Add the new card to the last position
-    }
-
-    public void FillDeckWithGenerics()
-    {
-        while (Cards.Any(element => element == null))
-        {
-            GiveCard(new Card(Card.Location.Deck, Card.Stage.Other));
-        }
     }
 
     public void Move(Card.Location startLocation, Card.Location newLocation, int amount)
