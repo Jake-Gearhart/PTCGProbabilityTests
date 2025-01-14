@@ -3,39 +3,47 @@ Console.Clear();
 Player player1 = new();
 
 player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "boss"));
+player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "boss"));
+player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "boss"));
+player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "boss"));
+player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "thinnable"));
+player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "thinnable"));
+player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "thinnable"));
+// player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "thinnable"));
 player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "thinnable"));
 player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "thinner"));
-player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "thinnable"));
 player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "thinner"));
-player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "thinnable"));
 player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "thinner"));
-player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "thinnable"));
 player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "thinner"));
-player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "thinnable"));
+player1.GiveCard(new Card (Card.Location.Deck, Card.Stage.Other, "thinner"));
 
-int iterations = 10000000;
+int iterations = 1000000;
 int fez_first_successes = 0;
 int ogerpon_first_successes = 0;
 
-for (int i = 0; i < iterations; i++)
+void thin ()
 {
-    if (i % 50000 == 0) Console.WriteLine(i);
-
-    //ogerpon first
-
-    player1.ResetCardLocations();
-
-    player1.Draw(1);
-
     while (
         player1.Hand.Any(c => c.category == "thinner")
     ) {
         player1.Hand.First(c => c.category == "thinner").location = Card.Location.Discard;
-        // try thinning 1 for 2 (like with Poffin)
-        if (player1.Deck.FirstOrDefault(c => c.category == "thinnable") is Card thinnableCard) thinnableCard.location = Card.Location.Discard;
-        if (player1.Deck.FirstOrDefault(c => c.category == "thinnable") is Card thinnableCard2) thinnableCard2.location = Card.Location.Discard;
-    }
 
+        //try thinning 1 for 2 (like with Poffin)
+        // comment 2nd attempt out to try only 1 for 1 thinning
+        if (player1.Deck.FirstOrDefault(c => c.category == "thinnable") is Card thinnableCard) thinnableCard.location = Card.Location.Discard;
+        // if (player1.Deck.FirstOrDefault(c => c.category == "thinnable") is Card thinnableCard2) thinnableCard2.location = Card.Location.Discard;
+    }
+}
+
+for (int i = 0; i < iterations; i++)
+{
+    if (i % 100000 == 0) Console.WriteLine($"{100 * i / iterations}%");
+
+    //ogerpon first
+
+    player1.ResetCardLocations();
+    player1.Draw(1);
+    thin();
     player1.Draw(3);
 
     if (player1.Hand.Any(c => c.category == "boss")) ogerpon_first_successes += 1;
@@ -43,18 +51,9 @@ for (int i = 0; i < iterations; i++)
     //fez first
 
     player1.ResetCardLocations();
-
-    player1.Draw(1);
-
-    while (
-        player1.Hand.Any(c => c.category == "thinner")
-    ) {
-        player1.Hand.First(c => c.category == "thinner").location = Card.Location.Discard;
-        if (player1.Deck.FirstOrDefault(c => c.category == "thinnable") is Card thinnableCard) thinnableCard.location = Card.Location.Discard;
-        if (player1.Deck.FirstOrDefault(c => c.category == "thinnable") is Card thinnableCard2) thinnableCard2.location = Card.Location.Discard;
-    }
-
     player1.Draw(3);
+    thin();
+    player1.Draw(1);
 
     if (player1.Hand.Any(c => c.category == "boss")) fez_first_successes += 1;
 }
@@ -110,6 +109,20 @@ class Player {
     {
         Array.Resize(ref Cards, Cards.Length + 1);
         Cards[^1] = card;
+    }
+
+    public void FillDeckWithGenerics()
+    {
+        if (Cards.Length >= 60) return;
+
+        int oldLength = Cards.Length;
+
+        Array.Resize(ref Cards, 60);
+
+        for (int i = oldLength; i < 60; i++)
+        {
+            Cards[i] = new Card(Card.Location.Deck, Card.Stage.Other);
+        }
     }
 
     public void Move(Card.Location startLocation, Card.Location newLocation, int amount)
