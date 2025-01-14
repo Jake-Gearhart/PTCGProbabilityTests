@@ -1,0 +1,14 @@
+/Users/jakegearhart/Projects/Pokémon/Iono/bin/Debug/net8.0/Iono
+/Users/jakegearhart/Projects/Pokémon/Iono/bin/Debug/net8.0/Iono.deps.json
+/Users/jakegearhart/Projects/Pokémon/Iono/bin/Debug/net8.0/Iono.runtimeconfig.json
+/Users/jakegearhart/Projects/Pokémon/Iono/bin/Debug/net8.0/Iono.dll
+/Users/jakegearhart/Projects/Pokémon/Iono/bin/Debug/net8.0/Iono.pdb
+/Users/jakegearhart/Projects/Pokémon/Iono/obj/Debug/net8.0/Iono.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jakegearhart/Projects/Pokémon/Iono/obj/Debug/net8.0/Iono.AssemblyInfoInputs.cache
+/Users/jakegearhart/Projects/Pokémon/Iono/obj/Debug/net8.0/Iono.AssemblyInfo.cs
+/Users/jakegearhart/Projects/Pokémon/Iono/obj/Debug/net8.0/Iono.csproj.CoreCompileInputs.cache
+/Users/jakegearhart/Projects/Pokémon/Iono/obj/Debug/net8.0/Iono.dll
+/Users/jakegearhart/Projects/Pokémon/Iono/obj/Debug/net8.0/refint/Iono.dll
+/Users/jakegearhart/Projects/Pokémon/Iono/obj/Debug/net8.0/Iono.pdb
+/Users/jakegearhart/Projects/Pokémon/Iono/obj/Debug/net8.0/Iono.genruntimeconfig.cache
+/Users/jakegearhart/Projects/Pokémon/Iono/obj/Debug/net8.0/ref/Iono.dll

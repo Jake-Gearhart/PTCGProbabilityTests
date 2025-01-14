@@ -1,0 +1,14 @@
+/Users/jakegearhart/Projects/Pokémon/Trolley/obj/Debug/net8.0/Trolley.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jakegearhart/Projects/Pokémon/Trolley/obj/Debug/net8.0/Trolley.AssemblyInfoInputs.cache
+/Users/jakegearhart/Projects/Pokémon/Trolley/obj/Debug/net8.0/Trolley.AssemblyInfo.cs
+/Users/jakegearhart/Projects/Pokémon/Trolley/obj/Debug/net8.0/Trolley.csproj.CoreCompileInputs.cache
+/Users/jakegearhart/Projects/Pokémon/Trolley/bin/Debug/net8.0/Trolley
+/Users/jakegearhart/Projects/Pokémon/Trolley/bin/Debug/net8.0/Trolley.deps.json
+/Users/jakegearhart/Projects/Pokémon/Trolley/bin/Debug/net8.0/Trolley.runtimeconfig.json
+/Users/jakegearhart/Projects/Pokémon/Trolley/bin/Debug/net8.0/Trolley.dll
+/Users/jakegearhart/Projects/Pokémon/Trolley/bin/Debug/net8.0/Trolley.pdb
+/Users/jakegearhart/Projects/Pokémon/Trolley/obj/Debug/net8.0/Trolley.dll
+/Users/jakegearhart/Projects/Pokémon/Trolley/obj/Debug/net8.0/refint/Trolley.dll
+/Users/jakegearhart/Projects/Pokémon/Trolley/obj/Debug/net8.0/Trolley.pdb
+/Users/jakegearhart/Projects/Pokémon/Trolley/obj/Debug/net8.0/Trolley.genruntimeconfig.cache
+/Users/jakegearhart/Projects/Pokémon/Trolley/obj/Debug/net8.0/ref/Trolley.dll
